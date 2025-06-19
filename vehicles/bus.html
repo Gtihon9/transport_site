@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автобус | ТрансПлюс</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/vehicles/vehicle-details.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <!-- Герой-секция машины -->
+    <section class="hero-section">
+        <div class="hero-bg-pattern"></div>
+        <div class="container position-relative">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-10 col-xl-8">
+                    <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">Маршрутное такси</h1>
+                    <p class="lead mb-5 animate__animated animate__fadeIn animate__delay-1s">20 мест с комфортом и скоростью</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="swiper vehicle-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="../images/bus_exterior.webp" class="img-fluid" alt="Bus exterior">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../images/bus-interior1.jpeg" class="img-fluid" alt="Bus interior">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../images/bus-interior2.jpg" class="img-fluid" alt="Passenger seats">
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    
+                    <div class="swiper-pagination"></div>
+                </div>
+                
+                <div class="vehicle-description mt-4">
+                    <h2>Описание</h2>
+                    <p>Современный автобус Mercedes Tourismo 2023 года выпуска. Идеальный вариант для групповых поездок, экскурсий и междугородних перевозок. Просторный салон с удобными креслами, климат-контролем и мультимедийной системой.</p>
+                    
+                    <h3 class="mt-4">Технические характеристики</h3>
+                    <ul class="specs-list">
+                        <li><i class="fas fa-users"></i> Вместимость: 50 пассажиров</li>
+                        <li><i class="fas fa-car"></i> Марка: Mercedes Tourismo</li>
+                        <li><i class="fas fa-calendar-alt"></i> Год выпуска: 2023</li>
+                        <li><i class="fas fa-snowflake"></i> Климат-контроль</li>
+                        <li><i class="fas fa-toilet"></i> Санузел</li>
+                        <li><i class="fas fa-tv"></i> 2 LCD телевизора</li>
+                        <li><i class="fas fa-wifi"></i> Wi-Fi</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="booking-card">
+                    <h3>Бронирование</h3>
+                    
+                    <div class="features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span>Бесплатная отмена за 48 часов</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span>Профессиональный водитель</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span>Полная страховка</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span>Детские кресла (по запросу)</span>
+                        </div>
+                    </div>
+                    
+                    <a href="../contacts.html" class="btn btn-primary w-100 mt-3 py-2">
+                        <i class="fas fa-calendar-check me-2"></i>Забронировать
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/load-components.js"></script>
+    <script>
+    const swiper = new Swiper('.vehicle-slider', {
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+    });
+    </script>
+</body>
+</html>

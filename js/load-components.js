@@ -1,7 +1,7 @@
 // Загружает header и footer на все страницы
 document.addEventListener('DOMContentLoaded', function() {
     // Загрузка header
-    fetch('components/header.html')
+    fetch('../components/header.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('header').innerHTML = data;
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
     // Загрузка footer
-    fetch('components/footer.html')
+    fetch('../components/footer.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer').innerHTML = data;

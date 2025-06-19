@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Маршрутное такси | ТрансПлюс</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/vehicles/vehicle-details.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <!-- Герой-секция машины -->
+    <section class="hero-section">
+        <div class="hero-bg-pattern"></div>
+        <div class="container position-relative">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-10 col-xl-8">
+                    <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">Маршрутное такси</h1>
+                    <p class="lead mb-5 animate__animated animate__fadeIn animate__delay-1s">20 мест с комфортом и скоростью</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="swiper vehicle-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="../images/minibus_exterior.webp" class="img-fluid" alt="Маршрутное такси">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../images/minibus_interior1.avif" class="img-fluid" alt="Салон маршрутки">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../images/minibus-interior3.jpg" class="img-fluid" alt="Пассажирские места">
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    
+                    <div class="swiper-pagination"></div>
+                </div>
+                
+                <div class="vehicle-description mt-4">
+                    <span class="minibus-badge">ЭКОНОМ КЛАСС</span>
+                    <h2>Описание</h2>
+                    <p>Современное маршрутное такси Mercedes Sprinter 2022 года выпуска. Идеально подходит для перевозки небольших групп по городу и между населёнными пунктами. Компактные размеры позволяют легко маневрировать в городском потоке, при этом сохраняя комфорт для пассажиров.</p>
+                    
+                    <h3 class="mt-4">Технические характеристики</h3>
+                    <ul class="specs-list">
+                        <li><i class="fas fa-users"></i> Вместимость: 20 пассажиров</li>
+                        <li><i class="fas fa-car"></i> Марка: Mercedes Sprinter</li>
+                        <li><i class="fas fa-calendar-alt"></i> Год выпуска: 2022</li>
+                        <li><i class="fas fa-tachometer-alt"></i> Расход топлива: 9.5 л/100 км</li>
+                        <li><i class="fas fa-snowflake"></i> Кондиционер</li>
+                        <li><i class="fas fa-wifi"></i> Wi-Fi</li>
+                        <li><i class="fas fa-plug"></i> USB-розетки для зарядки</li>
+                        <li><i class="fas fa-suitcase"></i> Багажное отделение</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="booking-card">
+                    <h3>Бронирование</h3>
+                    
+                    <div class="features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span>Бесплатная отмена за 24 часа</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span>Опытный водитель</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span>Страховка включена</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span>Детские кресла (по запросу)</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span>Круглосуточная поддержка</span>
+                        </div>
+                    </div>
+                    
+                    <a href="../contacts.html" class="btn btn-primary w-100 mt-3 py-2">
+                        <i class="fas fa-calendar-check me-2"></i>Забронировать
+                    </a>
+                    
+                    <div class="mt-4 text-center">
+                        <small class="text-muted">Минимальное время аренды: 2 часа</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/load-components.js"></script>
+    <script>
+    const swiper = new Swiper('.vehicle-slider', {
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+    });
+    </script>
+</body>
+</html>

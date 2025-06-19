@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${VEHICLE_NAME} | ТрансПлюс</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/vehicles/vehicle-details.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <section class="vehicle-hero" style="background-image: url('../images/${HERO_IMAGE}')">
+        <div class="container">
+            <h1 class="vehicle-title">${VEHICLE_NAME}</h1>
+            <p class="vehicle-subtitle">${VEHICLE_SUBTITLE}</p>
+        </div>
+    </section>
+
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="vehicle-gallery">
+                    <img src="../images/${MAIN_IMAGE}" class="img-fluid main-image" alt="${VEHICLE_NAME}">
+                    <div class="thumbnail-container">
+                        <img src="../images/${THUMBNAIL1}" class="thumbnail" alt="">
+                        <img src="../images/${THUMBNAIL2}" class="thumbnail" alt="">
+                    </div>
+                </div>
+                
+                <div class="vehicle-description mt-4">
+                    <h2>Описание</h2>
+                    <p>${DETAILED_DESCRIPTION}</p>
+                    
+                    <h3 class="mt-4">Технические характеристики</h3>
+                    <ul class="specs-list">
+                        ${SPECS_LIST_ITEMS}
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="booking-card">
+                    <h3>Бронирование</h3>
+                    <div class="price">от ${PRICE} руб./час</div>
+                    
+                    <div class="features">
+                        ${FEATURES_LIST}
+                    </div>
+                    
+                    <a href="../contacts.html" class="btn btn-primary w-100 mt-3">Забронировать</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/load-components.js"></script>
+</body>
+</html>
