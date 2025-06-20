@@ -1,51 +1,53 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Detect environment
     const isGitHubPages = window.location.host.includes('github.io');
-    const repoName = 'transport_site'; // Your repository name
-    const basePath = isGitHubPages ? `/${repoName}/` : '/';
+    const repoName = 'transport_site';
+    const githubBase = `https://gtihon9.github.io/${repoName}`;
+    
+    // Load components
+    loadComponent('header');
+    loadComponent('footer');
 
-    // Load header
-    fetch(`${basePath}components/header.html`)
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header').innerHTML = data;
-            setupNavigation();
-        })
-        .catch(() => {
-            // Fallback for local development
-            fetch('../components/header.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('header').innerHTML = data;
+    function loadComponent(name) {
+        const path = isGitHubPages 
+            ? `${githubBase}/components/${name}.html`
+            : `../components/${name}.html`;
+            
+        fetch(path)
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById(name).innerHTML = html;
+                if (name === 'header') {
                     setupNavigation();
-                });
-        });
+                    convertLinks();
+                }
+            })
+            .catch(console.error);
+    }
 
     function setupNavigation() {
-        // Convert all relative links to absolute
-        document.querySelectorAll('a').forEach(link => {
-            const href = link.getAttribute('href');
-            if (href && !href.startsWith('http') && !href.startsWith('/') && !href.startsWith('#')) {
-                if (href.startsWith('../')) {
-                    link.setAttribute('href', basePath + href.replace('../', ''));
-                } else {
-                    link.setAttribute('href', basePath + href);
-                }
-            }
-        });
-
-        // Set active link
-        const currentPath = window.location.pathname.replace(basePath, '');
+        const currentPath = window.location.pathname;
+        const comparePath = isGitHubPages 
+            ? currentPath.replace(`/${repoName}`, '')
+            : currentPath;
+        
         document.querySelectorAll('.nav-link').forEach(link => {
-            const linkPath = link.getAttribute('href').replace(basePath, '');
-            if (currentPath === linkPath || 
-               (currentPath.startsWith('vehicles/') && linkPath === 'services.html')) {
+            const linkPath = new URL(link.href).pathname;
+            if (comparePath === linkPath || 
+               (comparePath.includes('/vehicles/') && linkPath.endsWith('/services.html'))) {
                 link.classList.add('active');
                 link.setAttribute('aria-current', 'page');
             }
         });
     }
 
-    // Load footer similarly
-    // ...
+    function convertLinks() {
+        if (!isGitHubPages) return;
+        
+        document.querySelectorAll('a').forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('/') && !href.startsWith('//')) {
+                link.href = `${githubBase}${href}`;
+            }
+        });
+    }
 });
