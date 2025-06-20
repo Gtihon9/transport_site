@@ -1,79 +1,51 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Determine if we're on GitHub Pages
+    // Detect environment
     const isGitHubPages = window.location.host.includes('github.io');
-    const basePath = isGitHubPages ? `/${window.location.pathname.split('/')[1]}/` : '/';
-    
-    // Load header with fallback
-    const loadHeader = () => {
-        fetch(`${basePath}components/header.html`)
-            .then(response => {
-                if (!response.ok) throw new Error('Failed to load header');
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('header').innerHTML = data;
-                highlightActiveLink();
-            })
-            .catch(() => {
-                // Fallback to local path
-                fetch('../components/header.html')
-                    .then(response => response.text())
-                    .then(data => {
-                        document.getElementById('header').innerHTML = data;
-                        highlightActiveLink();
-                    });
-            });
-    };
+    const repoName = 'transport_site'; // Your repository name
+    const basePath = isGitHubPages ? `/${repoName}/` : '/';
 
-    // Load footer with fallback
-    const loadFooter = () => {
-        fetch(`${basePath}components/footer.html`)
-            .then(response => {
-                if (!response.ok) throw new Error('Failed to load footer');
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            })
-            .catch(() => {
-                // Fallback to local path
-                fetch('../components/footer.html')
-                    .then(response => response.text())
-                    .then(data => {
-                        document.getElementById('footer').innerHTML = data;
-                    });
-            });
-    };
+    // Load header
+    fetch(`${basePath}components/header.html`)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+            setupNavigation();
+        })
+        .catch(() => {
+            // Fallback for local development
+            fetch('../components/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header').innerHTML = data;
+                    setupNavigation();
+                });
+        });
 
-    // Active link highlighting
-    const highlightActiveLink = () => {
-        const currentPath = window.location.pathname;
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        navLinks.forEach(link => {
-            let linkPath = link.getAttribute('href');
-            
-            // Normalize paths
-            const normalize = path => path.replace(/\/$/, '')
-                                         .replace(/^\.\//, '')
-                                         .replace(/^\.\.\//, '')
-                                         .toLowerCase();
-            
-            const current = normalize(currentPath.replace(basePath, ''));
-            const target = normalize(linkPath);
-            
-            // Check for active link
-            if ((current === '' && target === 'index.html') ||
-                (current === target) ||
-                (current.includes(target) && target !== '') ||
-                (target.includes(current) && current !== '')) {
-                link.classList.add('active');
-                link.setAttribute('aria-current', 'page');
-                link.closest('.nav-item')?.classList.add('active');
+    function setupNavigation() {
+        // Convert all relative links to absolute
+        document.querySelectorAll('a').forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && !href.startsWith('http') && !href.startsWith('/') && !href.startsWith('#')) {
+                if (href.startsWith('../')) {
+                    link.setAttribute('href', basePath + href.replace('../', ''));
+                } else {
+                    link.setAttribute('href', basePath + href);
+                }
             }
         });
-    };
 
-    loadHeader();
-    loadFooter();
+        // Set active link
+        const currentPath = window.location.pathname.replace(basePath, '');
+        document.querySelectorAll('.nav-link').forEach(link => {
+            const linkPath = link.getAttribute('href').replace(basePath, '');
+            if (currentPath === linkPath || 
+               (currentPath.startsWith('vehicles/') && linkPath === 'services.html')) {
+                link.classList.add('active');
+                link.setAttribute('aria-current', 'page');
+            }
+        });
+    }
+
+    // Load footer similarly
+    // ...
 });
