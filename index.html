@@ -56,21 +56,43 @@
     <script type="application/ld+json">
     {
     "@context": "https://schema.org",
-    "@type": "TransportationService",
-    "name": "Пассажирские перевозки",
+    "@type": "Service",
+    "serviceType": "Пассажирские перевозки",
     "provider": {
         "@type": "LocalBusiness",
         "name": "ТрансПлюс",
+        "description": "Услуги пассажирских перевозок в Барановичах и области",
         "address": {
         "@type": "PostalAddress",
         "addressLocality": "Барановичи",
         "streetAddress": "пл. Ленина, 1"
-        }
+        },
+        "telephone": "+375(29)123-45-67",
+        "openingHours": "Mo-Su 08:00-22:00"
     },
-    "serviceType": "Транспортные услуги",
     "areaServed": {
         "@type": "AdministrativeArea",
         "name": "Брестская область"
+    },
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Транспортные услуги",
+        "itemListElement": [
+        {
+            "@type": "Offer",
+            "itemOffered": {
+            "@type": "Service",
+            "name": "Городские перевозки"
+            }
+        },
+        {
+            "@type": "Offer",
+            "itemOffered": {
+            "@type": "Service",
+            "name": "Междугородние перевозки"
+            }
+        }
+        ]
     }
     }
     </script>
