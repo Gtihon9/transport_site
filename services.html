@@ -29,6 +29,67 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/services/services.css">
     <link rel="stylesheet" href="css/services/vehicles.css">
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+        {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+            "@type": "Product",
+            "name": "Маршрутное такси",
+            "description": "Mercedes Sprinter на 20 мест",
+            "url": "https://вашсайт.by/vehicles/minibus.html"
+        }
+        },
+        {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+            "@type": "Product",
+            "name": "Автобус",
+            "description": "Mercedes Tourismo на 50 мест",
+            "url": "https://вашсайт.by/vehicles/bus.html"
+        }
+        }
+    ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Аренда транспорта",
+    "provider": {
+        "@type": "Organization",
+        "name": "ТрансПлюс"
+    },
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Транспортные решения",
+        "itemListElement": [
+        {
+            "@type": "Offer",
+            "itemOffered": {
+            "@type": "Service",
+            "name": "Корпоративные перевозки"
+            }
+        },
+        {
+            "@type": "Offer",
+            "itemOffered": {
+            "@type": "Service",
+            "name": "Туристические перевозки"
+            }
+        }
+        ]
+    }
+    }
+    </script>
 </head>
 <body>
     <!-- Header вставляется сюда -->
