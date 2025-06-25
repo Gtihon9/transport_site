@@ -67,8 +67,8 @@
         <div class="container position-relative">
             <div class="row justify-content-center text-center">
                 <div class="col-lg-10 col-xl-8">
-                    <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">Маршрутное такси</h1>
-                    <p class="lead mb-5 animate__animated animate__fadeIn animate__delay-1s">20 мест с комфортом и скоростью</p>
+                    <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">Автобус</h1>
+                    <p class="lead mb-5 animate__animated animate__fadeIn animate__delay-1s">50 мест с комфортом</p>
                 </div>
             </div>
         </div>
@@ -146,27 +146,50 @@
 
     <div id="footer"></div>
 
+        <!-- Подключаем скрипты в правильном порядке -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/load-components.js"></script>
+    
     <script>
-    const swiper = new Swiper('.vehicle-slider', {
-        loop: true,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        effect: 'fade',
-        fadeEffect: {
-            crossFade: true
-        },
+    // Инициализация Swiper после полной загрузки DOM
+    document.addEventListener('DOMContentLoaded', function() {
+        const swiper = new Swiper('.vehicle-slider', {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            // Оптимизация производительности
+            preloadImages: false,
+            lazy: {
+                loadPrevNext: true,
+            },
+            // Адаптивность
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                },
+                768: {
+                    slidesPerView: 1,
+                },
+                1024: {
+                    slidesPerView: 1,
+                },
+            }
+        });
     });
     </script>
 </body>
