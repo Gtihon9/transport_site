@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас | Пассажирские перевозки</title>
+    <!-- Подключаем CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/> 
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/services/services.css">
+    <link rel="stylesheet" href="css/services/vehicles.css">
+    <link rel="stylesheet" href="../css/vehicles/vehicle-details.css">
+</head>
+<body>
+    <!-- Заголовок (будет добавлен скриптом) -->
+    <div id="header"></div>
+
+    <!-- Герой-секция -->
+    <section class="hero-section">
+        <div class="hero-bg-pattern"></div>
+        <div class="container position-relative">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-10 col-xl-8">
+                    <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">О нашей компании</h1>
+                    <p class="lead mb-5 animate__animated animate__fadeIn animate__delay-1s">Мы создаём комфортные путешествия с 2015 года</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+     <!-- О компании -->
+    <section class="section my-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">                 
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="history-card h-100">
+                                <div class="text-center mb-4">
+                                    <i class="fas fa-shield-alt fa-3x text-primary"></i>
+                                </div>
+                                <h3 class="text-center">Безопасность</h3>
+                                <p>Все наши транспортные средства проходят регулярное техническое обслуживание и соответствуют самым строгим стандартам безопасности.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="history-card h-100">
+                                <div class="text-center mb-4">
+                                    <i class="fas fa-users fa-3x text-primary"></i>
+                                </div>
+                                <h3 class="text-center">Комфорт</h3>
+                                <p>Мы постоянно обновляем наш автопарк, чтобы обеспечить максимальный комфорт для наших пассажиров во время поездок.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="history-card h-100">
+                                <div class="text-center mb-4">
+                                    <i class="fas fa-clock fa-3x text-primary"></i>
+                                </div>
+                                <h3 class="text-center">Пунктуальность</h3>
+                                <p>Наши водители ценят ваше время - 98% рейсов отправляются и прибывают точно по расписанию.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Галерея поездок -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h2 class="display-4 fw-bold mb-4">Фотогалерея наших поездок</h2>
+                    <p class="lead mb-5">Запечатленные моменты из наших путешествий</p>
+                    
+                    <div class="swiper vehicle-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="../images/microbus_1.jpg" class="img-fluid" alt="Маршрутное такси">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../images/microbus_3.jpg" class="img-fluid" alt="Салон маршрутки">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../images/microbus_2.jpg" class="img-fluid" alt="Пассажирские места">
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    
+                    <div class="swiper-pagination"></div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Подвал (будет добавлен скриптом) -->
+    <div id="footer"></div>
+
+    <!-- Подключаем скрипты -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/load-components.js"></script>
+    <script>
+        // Инициализация слайдера
+        document.addEventListener('DOMContentLoaded', function() {
+            const swiper = new Swiper('.swiper', {
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+            });
+        });
+    </script>
+</body>
+</html>
