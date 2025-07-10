@@ -12,7 +12,6 @@ footer {
 
 .social-icon {
   font-size: 2rem; /* Увеличенный размер иконок */
-  transition: all 0.3s ease;
 }
 
 .social-link {
@@ -41,7 +40,7 @@ footer {
 
 @media (max-width: 768px) {
   .social-icon {
-    font-size: 1.8rem; /* Еще больше на мобильных */
+    font-size: 1.8rem;
   }
   .social-link {
     width: 50px;

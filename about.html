@@ -83,23 +83,16 @@
                     <p class="lead mb-5">Запечатленные моменты из наших путешествий</p>
                     
                     <div class="swiper vehicle-slider">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="images/microbus_1.jpg" class="img-fluid" alt="Маршрутное такси">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="images/microbus_3.jpg" class="img-fluid" alt="Салон маршрутки">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="images/microbus_2.jpg" class="img-fluid" alt="Пассажирские места">
-                        </div>
+                    <div class="swiper-wrapper" id="swiper-wrapper">
+                        <!-- Slides will be injected here -->
                     </div>
-                    
+
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
-                    
                     <div class="swiper-pagination"></div>
+                    </div>
                 </div>
+                
                 </div>
             </div>
         </div>
@@ -115,28 +108,31 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/load-components.js"></script>
     <script>
-        // Инициализация слайдера
-        document.addEventListener('DOMContentLoaded', function() {
-            const swiper = new Swiper('.swiper', {
-                loop: true,
-                autoplay: {
-                    delay: 5000,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                effect: 'fade',
-                fadeEffect: {
-                    crossFade: true
-                },
-            });
+    fetch('images/about/photo_list.json')
+    .then(response => response.json())
+    .then(images => {
+        const wrapper = document.getElementById('swiper-wrapper');
+        images.forEach(src => {
+        const slide = document.createElement('div');
+        slide.className = 'swiper-slide';
+        slide.innerHTML = `<img src="${src}" class="img-fluid" alt="Gallery Image">`;
+        wrapper.appendChild(slide);
         });
+
+        new Swiper('.vehicle-slider', {
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        loop: true,
+        });
+    })
+    .catch(err => console.error('Ошибка загрузки изображений:', err));
     </script>
+
 </body>
 </html>
