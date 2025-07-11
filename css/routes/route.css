@@ -1,0 +1,15 @@
+/* Стили для таблицы расписания */
+
+
+.table-responsive table {
+  margin-bottom: 0;
+}
+
+.table-responsive th {
+  white-space: nowrap;
+    background-color: #3498db;
+}
+
+.table-responsive td {
+  vertical-align: middle;
+}

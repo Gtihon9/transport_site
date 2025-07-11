@@ -82,7 +82,7 @@
             <div class="row justify-content-center text-center">
                 <div class="col-lg-10 col-xl-8">
                     <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">Маршрут Новогрудок - Барановичи</h1>
-                    <p class="lead mb-5 animate__animated animate__fadeIn animate__delay-1s">Комфортабельные рейсы каждую пятницу, субботу и воскресенье</p>
+                    <p class="lead mb-5 animate__animated animate__fadeIn animate__delay-1s">Комфортабельные рейсы каждую пятницу и воскресенье</p>
                     <a href="tel:+375295292715" class="btn btn-primary btn-lg px-5 py-3">
                         <i class="fas fa-phone-alt me-2"></i>Забронировать место
                     </a>
@@ -102,7 +102,7 @@
               <div class="col-md-6">
                 <h2 class="mb-4"><i class="fas fa-route me-3"></i>Детали маршрута</h2>
                 <ul class="route-details">
-                  <li><strong>Дни:</strong> Каждую пятницу, субботу и воскресенье</li>
+                  <li><strong>Дни:</strong> Каждую пятницу и воскресенье</li>
                   <!-- <li><strong>Отправление из Новогрудка:</strong> 18:00 (Автостанция)</li>
                   <li><strong>Прибытие в Барановичи:</strong> ~19:30</li> -->
                   <li><strong>Время в пути:</strong> 1 час</li>
@@ -112,13 +112,54 @@
               <div class="col-md-6">
                 <h2 class="mb-4"><i class="fas fa-map-marked-alt me-3"></i>Остановки</h2>
                 <ul class="stops-list">
-                  <li>Новогрудок</li>
-                  <li>Барановичи</li>
+                  <li>Барановичи (платформа Автовокзала)</li>
+                  <li>Новогрудок(платформа Автовокзала)</li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
+
+        
+
+        
+        <!-- Расписание рейсов -->
+        <div class="schedule-card card mb-5">
+          <div class="card-body">
+            <h2 class="mb-4"><i class="fas fa-clock me-3"></i>Расписание рейсов</h2>
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover">
+                <thead class="table-primary">
+                  <tr>
+                    <th>День недели</th>
+                    <th>Направление</th>
+                    <th>Время отправления</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td rowspan="2" class="align-middle">Пятница</td>
+                    <td>Барановичи → Новогрудок</td>
+                    <td>15:00</td>
+                  </tr>
+                  <tr>
+                    <td>Новогрудок → Барановичи</td>
+                    <td>16:50</td>
+                  </tr>
+                  <tr>
+                    <td>Воскресенье</td>
+                    <td>Новогрудок → Барановичи</td>
+                    <td>22:00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="schedule-note mt-3">
+              <p class="text-muted mb-0"><small>* Время указано местное. Рекомендуем прибывать на посадку за 10-15 минут.</small></p>
+            </div>
+          </div>
+        </div>
+
         
         <!-- Карта маршрута -->
         <div class="route-map card mb-5">
@@ -129,6 +170,8 @@
             </div>
           </div>
         </div>
+
+        
         
         <!-- Бронирование -->
         <div class="booking-section card">
