@@ -5,30 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Основные SEO-метатеги -->
-  <title>Маршрут Новогрудок - Барановичи | ТрансПлюс | Регулярные рейсы</title>
-  <meta name="description" content="Регулярные рейсы Новогрудок-Барановичи каждую пятницу и субботу. Забронируйте место по телефону +375 (29) 123-45-67. Комфортабельные автобусы, фиксированная цена.">
-  <meta name="keywords" content="рейс Новогрудок Барановичи, расписание автобусов Новогрудок, заказ билетов Новогрудок-Барановичи, регулярные перевозки Гродненская область">
+  <title>Маршрут Барановичи - Новогрудок | АистТур | Регулярные рейсы</title>
+  <meta name="description" content="Регулярные рейсы Новогрудок-Барановичи каждую пятницу и воскресенье. Комфортабельные автобусы, фиксированная цена. Забронируйте место по телефону +375 (29) 529-27-15.">
+  <meta name="keywords" content="рейс Новогрудок Барановичи, расписание автобусов Новогрудок, заказ билетов Новогрудок-Барановичи, регулярные перевозки Гродненская область, аист тур барановичи">
 
   <!-- OpenGraph для соцсетей -->
-  <meta property="og:title" content="Регулярный маршрут Новогрудок → Барановичи">
-  <meta property="og:description" content="Комфортабельные рейсы каждую пятницу и субботу. Забронируйте место по телефону +375 (29) 123-45-67.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://вашсайт.by/route-novogrudok-bar">
-  <meta property="og:image" content="https://вашсайт.by/images/route-preview.jpg">
+    <meta property="og:title" content="АистТур - Пассажирские перевозки в Барановичах">
+    <meta property="og:description" content="Профессиональные пассажирские перевозки, аренда автобусов и микроавтобусов в Барановичах и по Беларуси. Организация экскурсий.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.aist-tour.by">
+    <meta property="og:image" content="https://www.aist-tour.by/images/og-image.png">
+    <meta property="og:image:alt" content="Логотип АистТур — пассажирские перевозки в Барановичах">
+    <meta property="og:site_name" content="АистТур">
 
   <!-- Дополнительные метатеги -->
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://вашсайт.by/route-novogrudok-bar">
-  <meta name="author" content="ТрансПлюс">
+  <meta name="author" content="АистТур Барановичи">
+
+  <!-- Фавикон -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
   <!-- Подключаем CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/routes/route.css">
 
+  <!-- Schema.org разметка -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -38,21 +48,32 @@
     "departureBusStop": {
       "@type": "BusStop",
       "name": "Автостанция Новогрудка",
-      "address": "ул. Мицкевича, 5, Новогрудок"
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ул. Мицкевича, 19А",
+        "addressLocality": "Новогрудок",
+        "addressCountry": "BY"
+      }
     },
     "arrivalBusStop": {
       "@type": "BusStop",
       "name": "Автостанция Барановичи",
-      "address": "ул. Фроленкова, 11, Барановичи"
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ул. Фроленкова, 40",
+        "addressLocality": "Барановичи",
+        "addressCountry": "BY"
+      }
     },
     "provider": {
       "@type": "Organization",
-      "name": "ТрансПлюс",
-      "telephone": "+375291234567"
+      "name": "АистТур",
+      "telephone": "+375295292715",
+      "url": "https://www.aist-tour.by"
     },
     "offers": {
       "@type": "Offer",
-      "price": "10",
+      "price": "15",
       "priceCurrency": "BYN",
       "availability": "https://schema.org/InStock"
     },
