@@ -1,0 +1,223 @@
+/* Основные стили для страницы 404 */
+:root {
+    --primary: #0d6efd;
+    --secondary: #6c757d;
+    --success: #198754;
+    --light: #f8f9fa;
+    --dark: #212529;
+}
+
+body.error-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.error-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.error-content {
+    text-align: center;
+    width: 100%;
+    padding: 40px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.error-content:before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 40px solid rgba(13, 110, 253, 0.05);
+    top: -150px;
+    right: -150px;
+    z-index: 0;
+}
+
+.error-content:after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 30px solid rgba(13, 110, 253, 0.03);
+    bottom: -100px;
+    left: -100px;
+    z-index: 0;
+}
+
+.error-number {
+    font-size: 8rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    text-shadow: 0 5px 15px rgba(13, 110, 253, 0.2);
+}
+
+.error-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--dark);
+    position: relative;
+    z-index: 1;
+}
+
+.error-text {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--secondary);
+    position: relative;
+    z-index: 1;
+}
+
+.btn-home {
+    background-color: var(--primary);
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s;
+    border: none;
+    box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+}
+
+.btn-home:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(13, 110, 253, 0.4);
+}
+
+.error-image {
+    max-width: 100%;
+    height: auto;
+    margin: 30px auto;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.additional-options {
+    position: relative;
+    z-index: 1;
+    margin-top: 30px;
+}
+
+.additional-options h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--dark);
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.option-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    transition: all 0.3s;
+    border: 1px solid #e9ecef;
+    text-align: center;
+}
+
+.option-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-color: var(--primary);
+}
+
+.option-card i {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.option-card a {
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: 500;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .error-content {
+        padding: 30px 20px;
+    }
+    
+    .error-number {
+        font-size: 5rem;
+    }
+    
+    .error-title {
+        font-size: 1.8rem;
+    }
+    
+    .error-text {
+        font-size: 1rem;
+    }
+    
+    .error-content:before,
+    .error-content:after {
+        display: none;
+    }
+    
+    .options-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .error-number {
+        font-size: 4rem;
+    }
+    
+    .error-title {
+        font-size: 1.5rem;
+    }
+    
+    .options-grid {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+    }
+}
+body.error-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.error-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

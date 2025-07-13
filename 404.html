@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница не найдена | АистТур</title>
+    
+    <!-- Основные SEO-метатеги -->
+    <meta name="description" content="АистТур - профессиональные пассажирские перевозки в Барановичах и по Беларуси. Аренда автобусов, микроавтобусов, организация экскурсий.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://www.aist-tour.by">
+    
+    <!-- Подключаем CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/error.css"> <!-- Подключаем файл со стилями для 404 -->
+</head>
+<body class="error-page"> <!-- Добавляем класс для страницы ошибки -->
+    <!-- Header вставляется сюда -->
+    <div id="header"></div>
+
+    <!-- Основной контент страницы 404 -->
+    <div class="error-container">
+        <div class="container my-5">
+            <div class="error-content animate__animated animate__fadeInUp">
+                <div class="error-number">404</div>
+                <h1 class="error-title">Страница не найдена</h1>
+                <p class="error-text">Извините, но страница, которую вы ищете, не существует или была перемещена. Возможно, вы ввели неправильный адрес или страница была удалена.</p>
+                
+                <div class="d-flex justify-content-center">
+                    <svg class="error-image" width="300" height="200" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Аист с анимацией -->
+                        <path d="M200,250 Q250,200 300,250 T400,250" stroke="#0d6efd" stroke-width="8" fill="none">
+                            <animate attributeName="stroke-dashoffset" from="500" to="0" dur="1.5s" fill="freeze" />
+                        </path>
+                        <circle cx="180" cy="230" r="20" fill="#0d6efd">
+                            <animate attributeName="r" from="0" to="20" dur="0.5s" begin="1.5s" fill="freeze" />
+                        </circle>
+                        <path d="M180,250 L180,300" stroke="#0d6efd" stroke-width="8">
+                            <animate attributeName="stroke-dashoffset" from="100" to="0" dur="0.5s" begin="2s" fill="freeze" />
+                        </path>
+                        <path d="M180,300 L160,330" stroke="#0d6efd" stroke-width="8">
+                            <animate attributeName="stroke-dashoffset" from="100" to="0" dur="0.3s" begin="2.5s" fill="freeze" />
+                        </path>
+                        <path d="M180,300 L200,330" stroke="#0d6efd" stroke-width="8">
+                            <animate attributeName="stroke-dashoffset" from="100" to="0" dur="0.3s" begin="2.5s" fill="freeze" />
+                        </path>
+                        <path d="M400,250 L420,230" stroke="#0d6efd" stroke-width="8">
+                            <animate attributeName="stroke-dashoffset" from="100" to="0" dur="0.5s" begin="2.8s" fill="freeze" />
+                        </path>
+                        
+                        <!-- Знак вопроса с анимацией -->
+                        <circle cx="450" cy="150" r="40" fill="none" stroke="#ff6b6b" stroke-width="8" stroke-dasharray="5,5">
+                            <animate attributeName="r" from="0" to="40" dur="0.8s" begin="0.5s" fill="freeze" />
+                        </circle>
+                        <path d="M450,120 L450,140" stroke="#ff6b6b" stroke-width="8">
+                            <animate attributeName="stroke-dashoffset" from="100" to="0" dur="0.5s" begin="1.3s" fill="freeze" />
+                        </path>
+                        <circle cx="450" cy="170" r="5" fill="#ff6b6b">
+                            <animate attributeName="r" from="0" to="5" dur="0.3s" begin="1.8s" fill="freeze" />
+                        </circle>
+                    </svg>
+                </div>
+                
+                <a href="/" class="btn-home">
+                    <i class="fas fa-home"></i> Вернуться на главную
+                </a>
+                
+                <div class="additional-options">
+                    <h3>Или перейдите на другие страницы:</h3>
+                    <div class="options-grid">
+                        <div class="option-card">
+                            <i class="fas fa-bus"></i>
+                            <a href="services.html">Наши услуги</a>
+                        </div>
+                        <div class="option-card">
+                            <i class="fas fa-route"></i>
+                            <a href="route.html">Маршруты</a>
+                        </div>
+                        <div class="option-card">
+                            <i class="fas fa-info-circle"></i>
+                            <a href="about.html">О компании</a>
+                        </div>
+                        <div class="option-card">
+                            <i class="fas fa-phone"></i>
+                            <a href="contacts.html">Контакты</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer вставляется сюда -->
+    <div id="footer"></div>
+
+    <!-- Подключаем скрипты -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/load-components.js"></script>
+    
+    <!-- Дополнительный скрипт для анимации -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Анимация при загрузке страницы
+            setTimeout(function() {
+                document.querySelector('.error-content').classList.add('animate__pulse');
+            }, 1500);
+            
+            // Периодическая анимация для привлечения внимания
+            setInterval(function() {
+                document.querySelector('.btn-home').classList.add('animate__tada');
+                setTimeout(function() {
+                    document.querySelector('.btn-home').classList.remove('animate__tada');
+                }, 1000);
+            }, 10000);
+        });
+    </script>
+</body>
+</html>

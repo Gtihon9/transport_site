@@ -3,7 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>О нас | Пассажирские перевозки</title>
+    
+    <!-- Основные SEO-метатеги -->
+    <title>О компании | Пассажирские перевозки в Барановичах | АистТур</title>
+    <meta name="description" content="АистТур - надежные пассажирские перевозки в Барановичах с 2015 года. Аренда автобусов, микроавтобусов и маршрутных такси для групповых поездок.">
+    <meta name="keywords" content="пассажирские перевозки барановичи, аренда автобуса, заказ микроавтобуса, групповые перевозки, аист тур барановичи">
+    
+    <!-- OpenGraph для соцсетей -->
+    <meta property="og:title" content="О компании | Пассажирские перевозки в Барановичах | АистТур">
+    <meta property="og:description" content="Надежные пассажирские перевозки в Барановичах с 2015 года. Безопасность, комфорт и пунктуальность.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.aist-tour.by/about">
+    <meta property="og:image" content="https://www.aist-tour.by/images/og-image.png">
+    <meta property="og:image:alt" content="Команда АистТур - пассажирские перевозки в Барановичах">
+    <meta property="og:site_name" content="АистТур">
+    
+    <!-- Дополнительные метатеги -->
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.aist-tour.by/about">
+    <meta name="author" content="АистТур Барановичи">
+    
+    <!-- Фавикон -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    
     <!-- Подключаем CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,7 +40,41 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/services/services.css">
     <link rel="stylesheet" href="css/services/vehicles.css">
-    <link rel="stylesheet" href="css/vehicles/vehicle-details.css">
+    <link rel="stylesheet" href="css/vehicles/vehicle-details.css">    
+    <!-- Schema.org разметка -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "АистТур",
+        "alternateName": "Пассажирские перевозки в Барановичах",
+        "url": "https://www.aist-tour.by",
+        "logo": "https://www.aist-tour.by/images/og-image.png",
+        "foundingDate": "2015",
+        "founders": [{
+            "@type": "Person",
+            "name": "Иван Иванов"
+        }],
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ул. Советская, 123",
+            "addressLocality": "Барановичи",
+            "addressRegion": "Брестская область",
+            "postalCode": "225320",
+            "addressCountry": "BY"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+375295292715",
+            "contactType": "Customer service",
+            "areaServed": "BY"
+        },
+        "sameAs": [
+            "https://vk.com/aist_tour",
+            "https://www.instagram.com/aist_tour/"
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Заголовок (будет добавлен скриптом) -->
